@@ -1,8 +1,8 @@
 import json
 import os
-from text_processor import TextProcessor
-from tfidf_calculator import TFIDFCalculator
-from inverted_indexer import InvertedIndex
+from .text_processor import TextProcessor
+from .tfidf_calculator import TFIDFCalculator
+from .inverted_indexer import InvertedIndex
 
 class Indexer:
     def __init__(self, data_dir='data/pages', index_dir='index/data'):

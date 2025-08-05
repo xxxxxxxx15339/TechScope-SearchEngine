@@ -12,7 +12,7 @@ class TextProcessor:
                     # Conjunctions
                     'and', 'or', 'but', 'nor', 'yet', 'so',
                     # Prepositions
-                    'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'up', 'down', 'into', 'onto',
+                    'in', 'on', 'at', 'to', 'for', 'of', 'by', 'from', 'up', 'down', 'into', 'onto',
                     'through', 'during', 'before', 'after', 'since', 'until', 'against', 'among', 'between',
                     'behind', 'beneath', 'beside', 'beyond', 'inside', 'outside', 'under', 'over', 'above', 'below',
                     # Pronouns
@@ -42,8 +42,12 @@ class TextProcessor:
         return text
 
     def normalize_tokens(self, token: str) -> str:
+        # Convert to lowercase first
+        token = token.lower()
+        # Replace hyphens with spaces
         token = token.replace('-', ' ')
-        token = re.sub(r'[^a-zA-Z\s]', '', token).strip()
+        # Remove special characters but keep alphanumeric and spaces
+        token = re.sub(r'[^a-zA-Z0-9\s]', '', token).strip()
         return token
     
 
@@ -68,14 +72,27 @@ class TextProcessor:
     
     
     def process_document(self, html_content, metadata=None):
+        soup = BeautifulSoup(html_content, 'lxml')
+        
+        # Extract title from HTML
+        title_tag = soup.find('title')
+        title = title_tag.get_text().strip() if title_tag else 'No title'
+        
+        # Extract text content
         text = self.extract_text_from_html(html_content)
         cleaned_text = self.clean_text(text)
         tokens = cleaned_text.split()
 
-        if metadata:
-            metadata.update({
-                'processed_tokens': len(tokens),
-                'unique_tokens': len(set(tokens)),
-                'processing_timestamp': time.time()
-            })
+        if metadata is None:
+            metadata = {}
+            
+        # Add title and URL to metadata
+        metadata.update({
+            'title': title,
+            'url': metadata.get('original_url', 'No URL'),
+            'processed_tokens': len(tokens),
+            'unique_tokens': len(set(tokens)),
+            'processing_timestamp': time.time()
+        })
+        
         return tokens, metadata
