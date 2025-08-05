@@ -1,0 +1,30 @@
+{
+  "seed_urls": [
+    "https://stackoverflow.com",
+    "https://developer.mozilla.org",
+    "https://devdocs.io",
+    "https://realpython.com",
+    "https://tutorialspoint.com",
+    "https://w3schools.com",
+    "https://geeksforgeeks.org",
+    "https://docs.python.org",
+    "https://cplusplus.com",
+    "https://freecodecamp.org",
+    "https://css-tricks.com",
+    "https://codepen.io",
+    "https://github.com",
+    "https://git-scm.com",
+    "https://www.typescriptlang.org",
+    "https://go.dev",
+    "https://nodejs.org",
+    "https://developer.android.com",
+    "https://firebase.google.com",
+    "https://news.ycombinator.com"
+  ],
+  "max_pages_per_url": 20,
+  "top_pages_to_keep": 10,
+  "crawl_delay": 0.005,
+  "user_agent": "TechScopeBot/1.0",
+  "data_directory": "data/pages",
+  "index_directory": "index/data"
+} 
