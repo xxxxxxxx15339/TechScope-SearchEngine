@@ -45,7 +45,7 @@
 
 </div>
 
-A complete search engine implementation with web crawling, TF-IDF indexing, and intelligent search capabilities.
+A complete search engine implementation with web crawling from scratch, TF-IDF indexing, and intelligent search capabilities.
 
 ## 🎯 **Main Feature: Intelligent Search**
 
@@ -357,5 +357,6 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for details.
 **Built with ❤️ for learning search engine technology**
 
 </div>
+
 
 
