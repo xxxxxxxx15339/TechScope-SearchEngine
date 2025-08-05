@@ -36,10 +36,8 @@
 
 <!-- Features -->
 <img src="https://img.shields.io/badge/Web-Crawler-FF6B6B?style=flat-square&logo=spider&logoColor=white" alt="Web Crawler" />
-<img src="https://img.shields.io/badge/Search-Engine-4ECDC4?style=flat-square&logo=search&logoColor=white" alt="Search Engine" />
 
-<!-- CI Badge -->
-<img src="https://img.shields.io/badge/Status-Development-FF6B35?style=flat-square" alt="Development Status" />
+
 
 </p>
 
@@ -365,3 +363,4 @@ Distributed under the MIT License. See [LICENSE](./LICENSE) for details.
 **Built with ❤️ for learning search engine technology**
 
 </div>
+
